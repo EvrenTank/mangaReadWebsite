@@ -1,11 +1,14 @@
 import Logo from "./logo";
 import Header from "./header";
-import MangaSlider from "../pageComponents/mangaSlider";
+import MangaSlider from "../pageComponents/mangaSlider/mangaSlider";
+import MainDiv from "../pageComponents/lastMangaEpisodes/mainDiv";
+
 const Home = ()=>{
     return (
       <>
       <Header/>
       <MangaSlider/>
+      <MainDiv/>
       </>
     );
 }

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const SlidingDiv = ({color,imgSrc,episodeNumber,date}:any) => {
     return (
-        <div className = {`w-[100vw] h-full flex justify-center items-end relative ${color} `}>
+        <div className = {`w-[100vw] h-full flex justify-center items-end relative ${color}  `}>
             <div id='imageDiv' className="w-[20vw] min-w-[200px] h-[85%] border-[2px] flex justify-center">
                 <img src={`${imgSrc}`} alt="image" className="w-auto h-[100%]" />
             </div>
