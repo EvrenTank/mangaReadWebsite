@@ -2,29 +2,44 @@
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import {useState} from 'react';
+import SlidingDiv from './slidingDiv';
+import { useState } from 'react';
 
 const MangaSlider = () => {
 
-    const [translate,setTranslate]= useState(0);
-    const rightSlide =() :void =>{
-       setTranslate(translate=>translate+100);
-    } 
+    const [translation,setTranslation] = useState(0);
+    const rightSlide = () => {
+        setTranslation( (prevTranslation) => (prevTranslation + 1) % 5);
+    }
+    const leftSlide = () => {
+        setTranslation( (prevTranslation) => (prevTranslation - 1) % 5);
+    }
+    const translateValue = translation * -100;
+
+
 
     return (
-        <div className="h-[300px] w-[500vw] bg-amber-400 relative" >
-            <span className=' border-[1px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] left-[10px] flex justify-center items-center'>
+        <div className={`h-[250px] w-full bg-amber-400 relative`} >
+            <span className='border-[3px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] left-[10px] flex justify-center items-center'
+            onClick={leftSlide}>
                 <ArrowBackIosIcon/></span>
-            <div className ={`w-[500vw] h-full flex flex-row translate-x-[-${translate}vw] transition-transform duration-1000 `}>
-                <div className='w-[100vw] bg-lime-500'></div>
-                <div className='w-[100vw] bg-green-700'></div>
-                <div className='w-[100vw] bg-blue-400'></div>
-                <div className='w-[100vw] bg-red-800'></div>
-                <div className='w-[100vw] bg-lime-900'></div>
-            </div>
-            <span className=' border-[1px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] right-[10px] flex justify-center items-center'
+            <span className='border-[3px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] right-[10px] flex justify-center items-center z-20'
+                  onClick={rightSlide}
             >
                 <ArrowForwardIosIcon/></span>
+            <div className ={`w-[500vw] h-full flex flex-row`}
+            style={{
+                transform : `translateX(${translateValue}vw)`,
+                transitionDuration: translation === 0 ? '0s' : '1s'
+            }}>
+                <SlidingDiv color={'bg-white'} imgSrc='/mangaSliderImages/naruto.png' episodeNumber='256' date='19:41 - 25.09.2023'/>
+                <SlidingDiv color={'bg-green-700'} imgSrc='/mangaSliderImages/onePiece.png' episodeNumber='256' date='19:05 - 24.09.2023'/>
+                <SlidingDiv color={'bg-blue-400'} imgSrc='/mangaSliderImages/blackclover.png' episodeNumber='256' date='20:41 - 25.09.2023'/>
+                <SlidingDiv color={'bg-red-800'} imgSrc='/mangaSliderImages/onePunchMan.png' episodeNumber='256' date='08:41 - 26.08.2023'/>
+                <SlidingDiv color={'bg-lime-900'} imgSrc='/mangaSliderImages/beelzebub.png' episodeNumber='256' date='19:41 - 25.09.2023'/>
+
+            </div>
+
         </div>
     );
 }
