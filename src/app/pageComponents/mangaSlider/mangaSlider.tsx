@@ -19,7 +19,7 @@ const MangaSlider = () => {
 
 
     return (
-        <div className={`h-[250px] w-full bg-amber-400 relative `} >
+        <div className={`h-[250px] w-full bg-amber-400 relative overflow-hidden `} >
             <span className='border-[3px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] left-[10px]  flex justify-center items-center z-30'
             onClick={leftSlide}>
                 <ArrowBackIosIcon/></span>
