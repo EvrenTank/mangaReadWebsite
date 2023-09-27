@@ -1,7 +1,5 @@
 import TooltipTitle from "./tooltipTitle";
-import Tooltip from '@mui/material/Tooltip';
-import Box from "@mui/material/Box";
-import CustomTooltip from "./customizedTooltip";
+import CustomTooltip from "./additionalComponents/customizedTooltip";
 
 const Card = ({imgSrc,mangaName,addingDate,episodeNumber}:any)=>{
     return (
@@ -18,7 +16,7 @@ title={
   ]}/>
 } >
 <div id=''>
-        <div className={`aspect-[3/4] shadow-xl bg-white overflow-hidden relative`}>
+        <div className={`aspect-[3/4] shadow-xl bg-white overflow-hidden relative rounded-[10px]`}>
             <img src={imgSrc} className="w-[100%] h-auto text-center opacity-80" ></img>
             <div className="absolute left-0 bottom-[8%] w-[100%] h-[20%] "
             style={{

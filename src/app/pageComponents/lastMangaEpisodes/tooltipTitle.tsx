@@ -1,11 +1,11 @@
 import Link from "next/link";
 const TooltipTitle = ({lastFiveEpisodes}:any) => {
     return (
-     <div id='tooltipTitle' className="w-[100%] max-w-[450px] h-[25vh] shadow-lg  z-20 bg-white font-sans ">
+     <div id='tooltipTitle' className="w-[100%] max-w-[450px] h-[25vh] shadow-lg  z-20 bg-white  font-sans rounded-[5px] ">
         {
             lastFiveEpisodes.map((episode:any,index:number)=>{
                 return (
-                    <div key={index} className="w-[100%] h-[16%] text-[2vh] border-b-2 hover:bg-emerald-200 text-[rgba(0,0,0,0.7)] flex justify-between items-center">
+                    <div key={index} className="w-[100%] h-[16%] text-[2vh] border-b-[1px] hover:bg-emerald-200 text-[rgba(0,0,0,0.7)] flex justify-between items-center">
                         <Link href='/'><span className="pl-[10px]">{episode.number} {episode.name}</span></Link>
                         <span className="pr-[10px]">{episode.addingDate}</span>
                     </div>

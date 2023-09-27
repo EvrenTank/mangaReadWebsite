@@ -1,4 +1,5 @@
 import Link from "next/link";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = ({clickEvent}:any) => {
 
@@ -28,7 +29,8 @@ const Navbar = ({clickEvent}:any) => {
         </nav>
         <nav className='min-[1001px]:hidden max-[1001px]:flex h-[100%]  justify-center items-center bg-violet-600 '
         onClick={clickEvent}>
-        <div className='h-[50%] aspect-square bg-red-600 mr-[30px]'>
+        <div className='h-[50%] aspect-square mr-[30px]'>
+            <MenuIcon className="w-[100%] h-[100%] text-gray-300 "/>
         </div>
         </nav>
         </>
