@@ -19,7 +19,7 @@ const MangaSlider = () => {
 
 
     return (
-        <div id='topDiv' className={` w-full bg-amber-400 relative overflow-hidden `} >
+        <div id='topDiv' className={`h-[250px] w-full bg-amber-400 relative overflow-hidden `} >
             <span id='leftArrowSpan' className='border-[1px]  absolute w-[30px] h-[30px] top-[110px] left-[10px]  flex justify-center items-center z-30'
             onClick={leftSlide}>
                 <ArrowBackIosNewIcon/></span>
@@ -28,7 +28,7 @@ const MangaSlider = () => {
             >
                 <ArrowForwardIosIcon/></span>
                 
-            <div id='500vwDiv' className ={`w-[500vw]  flex flex-row`}
+            <div id='500vwDiv' className ={`w-[500vw] h-full flex flex-row`}
             style={{
                 transform : `translateX(${translateValue}vw)`,
                 transitionDuration: translation === 0 ? '0s' : '1s'
