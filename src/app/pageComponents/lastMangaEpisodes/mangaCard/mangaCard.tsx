@@ -1,5 +1,5 @@
 import TooltipTitle from "./tooltipTitle";
-import CustomTooltip from "./additionalComponents/customizedTooltip";
+import CustomTooltip from "../additionalComponents/customizedTooltip";
 
 const Card = ({imgSrc,mangaName,addingDate,episodeNumber}:any)=>{
     return (

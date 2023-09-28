@@ -1,5 +1,5 @@
-import PageNumberSelector from "./pageNumberSelector";
-import MangaCardList from "./mangacardList";
+import PageNumberSelector from "./pageNumberSelector/pageNumberSelector";
+import MangaCardList from "./mangaCard/mangacardList";
 
 const MainDiv = () => {
     return (

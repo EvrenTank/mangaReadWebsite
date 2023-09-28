@@ -1,5 +1,5 @@
 import Card from "./mangaCard";
-import PageNumberSelector from "./pageNumberSelector";
+import PageNumberSelector from "../pageNumberSelector/pageNumberSelector";
 const MangaCardList = () => {
     return (
         <div className="w-[100%] border-2 grid grid-cols-4 p-[15px] gap-[15px] max-[800px]:grid-cols-2 max-[1200px]:grid-cols-3  relative " >
