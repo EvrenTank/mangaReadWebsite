@@ -14,7 +14,7 @@ const SlidingDiv = ({color,imgSrc,episodeNumber,date}:any) => {
                     <span className="block text-center text-[20px] text-white ">BÖLÜM</span>
                     <span className="block text-center text-[40px] font-bold text-white">{episodeNumber}</span>
                 </div>
-                <div className='w-[100%] h-[35%] text-center border-2 text-[12px] text-white flex justify-center items-center'>
+                <div className='w-[100%] h-[35%] text-center text-[14px] text-white flex justify-center items-center'>
                 <span className="">{date}</span>    
                 </div>
                 

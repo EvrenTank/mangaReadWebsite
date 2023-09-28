@@ -13,7 +13,7 @@ const Header = () => {
 
     return (
         <>
-        <header className = " w-[100vw] h-[100px] flex justify-between bg-violet-600" >
+        <header className = " w-[100vw] h-[80px] flex justify-between bg-violet-600" >
         <Logo/>
         <Navbar clickEvent ={clickEvent} />
         </header>
