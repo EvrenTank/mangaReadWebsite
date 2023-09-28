@@ -1,7 +1,7 @@
 'use client'
 
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import SlidingDiv from './slidingDiv';
 import { useState } from 'react';
 
@@ -12,21 +12,22 @@ const MangaSlider = () => {
         setTranslation( (prevTranslation) => (prevTranslation + 1) % 5);
     }
     const leftSlide = () => {
-        setTranslation( (prevTranslation) => (prevTranslation - 1) % 5);
+        setTranslation( (prevTranslation) => (prevTranslation + 4) % 5);
     }
-    const translateValue = translation * -100;
+    const translateValue = translation * -100; // silme
 
 
 
     return (
         <div className={`h-[250px] w-full bg-amber-400 relative overflow-hidden `} >
-            <span className='border-[3px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] left-[10px]  flex justify-center items-center z-30'
+            <span className='border-[1px]  absolute w-[30px] h-[30px] top-[110px] left-[10px]  flex justify-center items-center z-30'
             onClick={leftSlide}>
-                <ArrowBackIosIcon/></span>
-            <span className='border-[3px] rounded-[50%] absolute w-[30px] h-[30px] top-[140px] right-[10px] flex justify-center items-center z-20'
+                <ArrowBackIosNewIcon/></span>
+            <span className='border-[1px]  absolute w-[30px] h-[30px] top-[110px] right-[10px] flex justify-center items-center z-20'
                   onClick={rightSlide}
             >
                 <ArrowForwardIosIcon/></span>
+                
             <div className ={`w-[500vw] h-full flex flex-row`}
             style={{
                 transform : `translateX(${translateValue}vw)`,
