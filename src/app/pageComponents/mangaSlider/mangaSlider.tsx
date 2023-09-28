@@ -8,11 +8,20 @@ import { useState } from 'react';
 const MangaSlider = () => {
 
     const [translation,setTranslation] = useState(0);
+    const [istrue,setTrue] = useState(false);
     const rightSlide = () => {
         setTranslation( (prevTranslation) => (prevTranslation + 1) % 5);
+        setTrue(false);
+        if(translation === 4){
+            setTrue(true);
+        }
     }
     const leftSlide = () => {
         setTranslation( (prevTranslation) => (prevTranslation + 4) % 5);
+        setTrue(false);
+        if(translation === 0) {
+            setTrue(true);
+        }
     }
     const translateValue = translation * -100; // silme
 
@@ -31,7 +40,7 @@ const MangaSlider = () => {
             <div id='500vwDiv' className ={`w-[500vw]  flex flex-row`}
             style={{
                 transform : `translateX(${translateValue}vw)`,
-                transitionDuration: translation === 0 ? '0s' : '1s'
+                transitionDuration: istrue  ? '0s' : '1s'
             }}>
                 <SlidingDiv color={'bg-white'} imgSrc='/mangaSliderImages/naruto.png' episodeNumber='256' date='19:41 - 25.09.2023'/>
                 <SlidingDiv color={'bg-green-700'} imgSrc='/mangaSliderImages/onePiece.png' episodeNumber='256' date='19:05 - 24.09.2023'/>
