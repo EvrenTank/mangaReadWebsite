@@ -31,7 +31,7 @@ const GenresDiv = () => {
     }
 
     return (
-        <div className="w-[85%] p-[15px] bg-white mb-[15px] rounded-[5px]">
+        <div className="w-[85%] min-w-[320px] p-[15px] bg-white mb-[15px] rounded-[5px]">
             <div className='w-[100] mb-[5px] border-b-[1px] '>
                 <span className='w-[12px] inline-block aspect-square' 
                 style={{

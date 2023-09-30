@@ -43,7 +43,7 @@ const colors = ['bg-purple-600','bg-purple-500','bg-purple-400','bg-purple-300',
 
 
     return (
-        <div className="w-[30vw] box-content shadow-2xl p-[15px] rounded-[5px]">
+        <div className="w-[85%] min-w-[320px] bg-white shadow-2xl p-[15px] rounded-[5px]">
             <div className="h-[40px] w-[100%] pl-[5px] pr-[5px] border-b-[1px] border-gray-300 flex items-center justify-between">
                 <h1 className="inline">TOP 5</h1>
                 <Link href='/'><h1 className="inline ">TÜMÜNÜ GÖR</h1></Link>

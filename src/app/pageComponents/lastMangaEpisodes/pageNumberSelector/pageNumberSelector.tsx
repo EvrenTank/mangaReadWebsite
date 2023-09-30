@@ -9,7 +9,7 @@ const PageNumberSelector = () => {
     
     return (
 
-       <div className="w-[100%]  border-[1px] border-slate-400 gap-[10px] flex flex-row justify-center flex-wrap">
+       <div className="w-[85%]   bg-white gap-[10px] flex flex-row justify-center flex-wrap">
         <SelectorDiv iconOption='Left' firstpagenumber={firstpagenumber}
         onClickEvent={()=>{
             if(firstpagenumber > 1)

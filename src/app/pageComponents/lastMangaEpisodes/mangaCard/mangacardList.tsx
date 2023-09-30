@@ -2,7 +2,7 @@ import Card from "./mangaCard";
 import PageNumberSelector from "../pageNumberSelector/pageNumberSelector";
 const MangaCardList = () => {
     return (
-        <div className="w-[100%] border-2 grid grid-cols-4 p-[15px] gap-[15px] max-[800px]:grid-cols-2 max-[1200px]:grid-cols-3  relative " >
+        <div className="w-[85%] bg-white  grid grid-cols-4 p-[15px] gap-[15px] max-[800px]:grid-cols-2 max-[1200px]:grid-cols-3 rounded-[5px] relative " >
             <Card imgSrc='/lastMangaEpisodes/naruto.jpg' mangaName='Naruto Shippuden' addingDate='1 gün' episodeNumber='700'/>
             <Card imgSrc='/lastMangaEpisodes/onepiece.jpg' mangaName='One Piece' addingDate='2 gün' episodeNumber='1200'/>
             <Card imgSrc='/lastMangaEpisodes/onepunchman.jpg' mangaName='One Punch Man' addingDate='2 gün' episodeNumber='198'/>
