@@ -40,7 +40,7 @@ const GenresDiv = () => {
                 }} ></span>
                 <h2 className='inline-block ml-[3px]'>TÜRLER</h2>
             </div>
-            <ul className="w-[100%] grid grid-cols-2 gap gap:border-[1px]"
+            <ul className="w-[100%] grid grid-cols-2 gap gap:border-[1px] max-[1250px]:grid-cols-1 "
            >
                 {
                     genres.map((genre,index)=>{
