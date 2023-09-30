@@ -23,7 +23,7 @@ const MangaSlider = () => {
             setTrue(true);
         }
     }
-    const translateValue = translation * -100; // silme
+    const translateValue = translation * -100;
 
 
 

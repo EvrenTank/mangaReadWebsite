@@ -7,15 +7,29 @@ const Navbar = ({clickEvent}:any) => {
 
     return (
         <>
-        <nav className='flex flex-row grow  justify-around items-center bg-violet-600 max-[1000px]:hidden max-[1300px]:justify-center'>
+        <nav className='flex flex-row grow  justify-around items-center bg-violet-600 max-[1000px]:hidden '>
             <ul className=" h-[100%] flex flex-row items-stretch ">
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'><Link href="https://anizm.net" target="_blank">ANİME</Link></li>
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'><Link href="https://felisnovel.com" target="_blank">NOVEL OKU</Link></li>
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'><Link href="https://yeppuu.com/" target="_blank">ANİME HABER</Link></li>
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'><Link href='https://serimanga.com/fansublar' target="_blank">ÇEVİRİ GRUPLARI</Link></li>
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'><Link href='https://serimanga.com/sikca-sorulan-sorular' target="_blank">S.S.S</Link></li>
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'><Link href='https://serimanga.com/mangalar' target="_blank">MANGA LİSTESİ</Link></li>
-                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center border-r-[1px] mr-[5px]'><Link href=''>GECE MODU</Link></li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'>
+                    <Link className='max-[1200px] w-min' href="https://anizm.net" target="_blank">ANİME</Link>
+                    </li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'>
+                    <Link className='max-[1200px] w-min' href="https://felisnovel.com" target="_blank">NOVEL OKU</Link>
+                    </li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'>
+                    <Link className='max-[1200px] w-min' href="https://yeppuu.com/" target="_blank">ANİME HABER</Link>
+                    </li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'>
+                    <Link className='max-[1200px] w-min' href='https://serimanga.com/fansublar' target="_blank">ÇEVİRİ GRUPLARI</Link>
+                    </li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'>
+                    <Link className='max-[1200px] w-min' href='https://serimanga.com/sikca-sorulan-sorular' target="_blank">S.S.S</Link>
+                    </li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center'>
+                    <Link className='max-[1200px] w-min' href='https://serimanga.com/mangalar' target="_blank">MANGA LİSTESİ</Link>
+                    </li>
+                <li className='text-white pr-[7px] pl-[7px] hover:bg-violet-800 border-l-[1px] font-semibold text-[13px] flex justify-center items-center border-r-[1px] mr-[5px]'>
+                    <Link className='max-[1200px] w-min' href=''>GECE MODU</Link>
+                    </li>
             </ul>
             <div className="flex justify-between items-center">
             <form className=' mr-[20px] w-[80%] h-full flex justify-center items-center relative'>
