@@ -1,6 +1,9 @@
+import DetailMainDiv from "./detailSection/detailMainDiv";
 const Page = () => {
     return (
-        <div className="w-[200px] h-[200px] bg-red-300"></div>
+        <div id="container" className="w-[90%] relative left-[10%] flex justify-center items-center">
+            <DetailMainDiv/>
+        </div>
     )
 }
 
