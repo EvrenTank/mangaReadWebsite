@@ -45,7 +45,7 @@ const GenresDiv = () => {
                 {
                     genres.map((genre,index)=>{
                         return (
-                            <ListComponent index={index} genre={genre}/>
+                            <ListComponent key={index} index={index} genre={genre}/>
                         )
                     })
                 }
