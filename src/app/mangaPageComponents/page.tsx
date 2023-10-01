@@ -1,9 +1,11 @@
-import DetailMainDiv from "./detailSection/detailMainDiv";
+import Header from "../header/header";
+import MainDiv from "./mainDiv";
 const Page = () => {
     return (
-        <div id="container" className="w-[90%] relative left-[10%] flex justify-center items-center">
-            <DetailMainDiv/>
-        </div>
+        <>
+        <Header/>
+        <MainDiv/>
+        </>
     )
 }
 

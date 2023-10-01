@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const OtherDiv = ({nedir,goruntuleme,yayinYili,ceviriTamamlanmis,yayinTamamlanmis,kategori,ceviriGrubu}:any) => {
     return (
-        <div className="flex flex-col gap-2 bg-white p-[10px] ">
+        <div className="flex flex-col gap-2 bg-white p-[10px] rounded-[5px]">
             <div className="grid grid-cols-3 gap-2">
                 <div className="bg-[#f0f3ff] rounded-[5px] p-[10px]">
                     <span className='block text-[14px] text-[#8992b7] mb-[5px]'>Nedir</span>
