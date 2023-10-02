@@ -1,6 +1,8 @@
 import OtherDiv from "./otherDiv";
 import SubjectDiv from "./subjectDiv";
-
+import ImageDiv from "./imageandratingDivComponents/imageDiv";
+import RatingDiv from "./imageandratingDivComponents/ratingDiv";
+import FollowDiv from "./imageandratingDivComponents/followDiv";
 const DetailMainDiv = ({imgSrc,mangaName}:any) => {
 
     const details = {
@@ -11,30 +13,19 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
         yayinTamamlanmis:true,
         kategori:['Aksiyon','Drama','Fantezi','Dövüş Sanatları','Shounen','Doğaüstü'],
         ceviriGrubu:'Bağımsız',
-        konu:"Naruto serisine mini spin-off olarak çizilmiş manga. Naruto\'nun oğlunu ve gelecek nesil ninjaları konu almaktadır."
+        konu:"Naruto serisine mini spin-off olarak çizilmiş manga. Naruto\'nun oğlunu ve gelecek nesil ninjaları konu almaktadır.",
+        kullanilanOySayisi:1000,
+        rating: 4.5,
+        takipciSayisi: 270
     }
 
     return (
         <div id='detailMainDiv' className="w-[100%]  bg-white rounded-[5px] shadow-lg relative">
             <div id='imgveratingkartıkapsayandiv' className="w-[33%] p-[10px] max-w-[400px] rounded-[5px] flex flex-col absolute top-0 left-0 justify-center items-center">
-                <div className="w-[90%]"></div>
-                <div className="w-[90%] h-[400px] rounded-[5px] " 
-                       style={{
-                        backgroundImage: `url(${imgSrc})`,
-                        backgroundSize: "cover",
-                        backgroundPositionX: 'center',
-                    }}
-                >
-                    <div className='w-full h-full relative '
-                    style={{
-                        background: 'linear-gradient(to bottom,rgba(104,94,255,0) 0%,rgba(104,94,255,0.85) 100%)'
-                    }}>
-                        <div className='w-full h-[25%] p-[20px] absolute bottom-0 tracking-wider'>
-                            <span className="font-semibold text-white text-[20px]">{mangaName}</span>
-                        </div>
-                    </div>
-                </div>
-                <div className="w-[80%]"></div>
+
+                <RatingDiv kullanilanOySayisi={details.kullanilanOySayisi} rating={details.rating} />
+                <ImageDiv imgSrc={imgSrc} mangaName={mangaName} />
+                <FollowDiv takipciSayisi={details.takipciSayisi}/>
                 <div className="w-[80%]"></div>
 
             </div>
