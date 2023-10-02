@@ -26,7 +26,6 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
                 <RatingDiv kullanilanOySayisi={details.kullanilanOySayisi} rating={details.rating} />
                 <ImageDiv imgSrc={imgSrc} mangaName={mangaName} />
                 <FollowDiv takipciSayisi={details.takipciSayisi}/>
-                <div className="w-[80%]"></div>
 
             </div>
             <div id='subjectdivveotherdivdivlerinikapsayandiv' className="w-[66%] h-full float-right  flex flex-row ">
@@ -46,6 +45,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
                     />
                 </div>
             </div>
+            <div id='chaptersdivikapsayandiv'  ></div>
         </div>
     )
 }
