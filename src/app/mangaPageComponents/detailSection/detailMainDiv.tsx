@@ -46,7 +46,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
                 </div>
             </div>
         </div>
-        <div id='chaptersdivikapsayandiv' className="w-[66%] max-[1000px]:w-[100%] h-[500px] border-2">
+        <div id='chaptersdivikapsayandiv' className="w-[66%] max-[1000px]:w-[100%] h-[500px] ">
             <ChaptersDiv/>
             
 

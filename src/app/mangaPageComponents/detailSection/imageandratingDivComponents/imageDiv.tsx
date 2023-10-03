@@ -1,6 +1,6 @@
 const ImageDiv =  ({imgSrc,mangaName}:any) => {
     return (
-        <div className="w-[90%] h-[400px] rounded-[5px] " 
+        <div className="w-[100%] h-[400px] rounded-[5px] " 
         style={{
          backgroundImage: `url(${imgSrc})`,
          backgroundSize: "cover",
