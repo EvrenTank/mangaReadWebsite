@@ -3,6 +3,7 @@ import SubjectDiv from "./subjectDiv";
 import ImageDiv from "./imageandratingDivComponents/imageDiv";
 import RatingDiv from "./imageandratingDivComponents/ratingDiv";
 import FollowDiv from "./imageandratingDivComponents/followDiv";
+import ChaptersDiv from "./chaptersDiv";
 const DetailMainDiv = ({imgSrc,mangaName}:any) => {
 
     const details = {
@@ -20,6 +21,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
     }
 
     return (
+        <>
         <div id='detailMainDiv' className="w-[100%]  bg-white rounded-[5px] shadow-lg relative">
             <div id='imgveratingkartıkapsayandiv' className="w-[33%] p-[10px] max-w-[400px] rounded-[5px] flex flex-col absolute top-0 left-0 justify-center items-center">
 
@@ -45,8 +47,13 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
                     />
                 </div>
             </div>
-            <div id='chaptersdivikapsayandiv'  ></div>
         </div>
+        <div id='chaptersdivikapsayandiv' className="w-[66%] h-[500px] border-2">
+            <ChaptersDiv/>
+            
+
+        </div>
+        </>
     )
 }
 
