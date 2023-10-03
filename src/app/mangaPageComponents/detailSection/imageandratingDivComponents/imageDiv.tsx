@@ -7,7 +7,7 @@ const ImageDiv =  ({imgSrc,mangaName}:any) => {
          backgroundPositionX: 'center',
      }}
  >
-     <div className='w-full h-full relative '
+     <div className='w-full h-full relative rounded-[5px]'
      style={{
          background: 'linear-gradient(to bottom,rgba(104,94,255,0) 0%,rgba(104,94,255,0.85) 100%)'
      }}>

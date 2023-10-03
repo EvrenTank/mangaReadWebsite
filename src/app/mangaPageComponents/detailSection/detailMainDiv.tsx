@@ -22,20 +22,18 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
 
     return (
         <>
-        <div id='detailMainDiv' className="w-[100%]  bg-white rounded-[5px] shadow-lg relative">
-            <div id='imgveratingkartıkapsayandiv' className="w-[33%] p-[10px] max-w-[400px] rounded-[5px] flex flex-col absolute top-0 left-0 justify-center items-center">
-
+        <div id='detailMainDiv' className="w-[100%]  bg-white rounded-[5px] shadow-lg relative
+         max-[1000px]:flex max-[1000px]:flex-col">
+            <div id='imgveratingkartıkapsayandiv' className="w-[33%] p-[10px] min-[1001px]:max-w-[400px] max-[1000px]:w-[100%] max-[1000px]:static  rounded-[5px] flex flex-col absolute top-0 left-0 justify-center items-center">
                 <RatingDiv kullanilanOySayisi={details.kullanilanOySayisi} rating={details.rating} />
                 <ImageDiv imgSrc={imgSrc} mangaName={mangaName} />
                 <FollowDiv takipciSayisi={details.takipciSayisi}/>
-
             </div>
-            <div id='subjectdivveotherdivdivlerinikapsayandiv' className="w-[66%] h-full float-right  flex flex-row ">
-                <div id='subjectdivikapsayandiv' className="w-[calc(50%-20px)] h-full mr-[40px]">
+            <div id='subjectdivveotherdivdivlerinikapsayandiv' className="w-[66%]  h-full float-right  flex flex-row max-[1000px]:w-[100%] max-[1000px]:flex-col ">
+                <div id='subjectdivikapsayandiv' className="w-[calc(50%-20px)] h-full mr-[40px] max-[1000px]:w-[100%]">
                     <SubjectDiv konu={details.konu}/>
-
                 </div>
-                <div id='otherdivikapsayandiv' className="w-[calc(50%-20px)] h-full">
+                <div id='otherdivikapsayandiv' className="w-[calc(50%-20px)] h-full max-[1000px]:w-[100%]">
                     <OtherDiv 
                     nedir={details.nedir} 
                     goruntuleme={details.goruntuleme}
@@ -48,7 +46,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
                 </div>
             </div>
         </div>
-        <div id='chaptersdivikapsayandiv' className="w-[66%] h-[500px] border-2">
+        <div id='chaptersdivikapsayandiv' className="w-[66%] max-[1000px]:w-[100%] h-[500px] border-2">
             <ChaptersDiv/>
             
 
