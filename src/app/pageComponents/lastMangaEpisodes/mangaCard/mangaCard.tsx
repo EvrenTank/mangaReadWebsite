@@ -1,5 +1,6 @@
 import TooltipTitle from "./tooltipTitle";
 import CustomTooltip from "../additionalComponents/customizedTooltip";
+import Link from "next/link";
 
 const Card = ({imgSrc,mangaName,addingDate,episodeNumber}:any)=>{
     return (
@@ -15,7 +16,7 @@ title={
     { number:'696', name:'Saldırı:1', addingDate:'27.08.2023'}
   ]}/>
 } >
-<div id=''>
+<Link href='/mangaPageComponents'>
         <div className={`aspect-[3/4] shadow-xl bg-white overflow-hidden relative rounded-[10px]`}>
             <img src={imgSrc} className="w-[100%] h-auto text-center opacity-80" ></img>
             <div className="absolute left-0 bottom-[8%] w-[100%] h-[20%] "
@@ -29,7 +30,7 @@ title={
         </div>
         <div className="mt-[10px] text-[rgba(0,0,0,0.5)] text-center text-[80%]">{mangaName}
         </div>
-        </div>
+        </Link>
 </CustomTooltip>
 
     );
