@@ -3,13 +3,13 @@
 import SelectorDiv from './selectorDiv';
 import {useState} from 'react';
 
-const PageNumberSelector = () => {
+const PageNumberSelector = ({}:any) => {
     
     const [firstpagenumber,setFirstpagenumber] = useState(1);
     
     return (
 
-       <div className="w-[85%]   bg-white gap-[10px] flex flex-row justify-center flex-wrap">
+       <div className={`w-[85%] bg-white gap-[10px] flex flex-row justify-center flex-wrap mt-[10px]`}>
         <SelectorDiv iconOption='Left' firstpagenumber={firstpagenumber}
         onClickEvent={()=>{
             if(firstpagenumber > 1)
