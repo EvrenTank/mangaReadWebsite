@@ -1,5 +1,6 @@
 import PageNumberSelector from "@/app/pageComponents/lastMangaEpisodes/pageNumberSelector/pageNumberSelector";
 import ChapterListElement from "./chaptersDivComponents/chapterListElement";
+import SeeComments from "./chaptersDivComponents/seeComments";
 
 const ChaptersDiv = () => {
     return (
@@ -15,6 +16,7 @@ const ChaptersDiv = () => {
             <ChapterListElement episodeNumber='100' episodeTitle='Mücadele' okunmaSayisi='11200' eklenmeTarihi='08.09.2023'></ChapterListElement>
             </ul>
             <PageNumberSelector />
+            <SeeComments/>
 
 
         </div>
