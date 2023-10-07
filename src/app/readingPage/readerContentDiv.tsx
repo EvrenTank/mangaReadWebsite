@@ -3,8 +3,8 @@ import PreviousandNextButtonsDiv from "./readerContentDivComponents/previousAndn
 
 const ReaderContentDiv = ()=> {
     return (
-        <div className="w-full flex justify-center">
-            <div className='w-[50%] '>
+        <div className="w-full flex justify-center bg-black pb-[50px]">
+            <div id='PreviousandNextButtonsDiv ve MangaPagesDiv container' className='w-[70%] max-w-[800px] '>
             <PreviousandNextButtonsDiv/>
             <MangaPagesDiv episodeImagesFilePath='/mangaEpisodes/naruto/episode1'/>
             </div>
