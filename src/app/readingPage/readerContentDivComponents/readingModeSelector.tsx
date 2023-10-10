@@ -1,7 +1,7 @@
 import HeightIcon from '@mui/icons-material/Height';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-
-const ReadingModeSelector = ({setTektek,setOrmp,tektek}:any) => {
+import Link from 'next/link';
+const ReadingModeSelector = ({setTektek,setOrmp,tektek,mangaName,episodeNumber}:any) => {
     return (
         <div className="w-[100%] h-screen fixed top-0 left-0 border-2 border-red-800 bg-[rgba(255,255,255,0.5)]  z-40 flex justify-center items-center">
             <div className="w-[350px] h-[250px] bg-white border-2 opacity-90 border-gray-500 z-50 rounded-[10px]">
@@ -24,9 +24,12 @@ const ReadingModeSelector = ({setTektek,setOrmp,tektek}:any) => {
                     }><HeightIcon />Hepsi Tek Sayfada</span>
                 </div>
                 <div className='w-full h-1/3 flex justify-center items-center text-[13px]'>
+                    <Link href={tektek ? `/manga/${mangaName}/${episodeNumber}/1`:`/manga/${mangaName}/${episodeNumber}` }>
                     <span onClick={()=>{setOrmp(false);}}
                     className="p-[8px] text-white bg-green-500 rounded-[7px] cursor-pointer hover:bg-green-700 duration-300"><CheckCircleOutlineIcon className="mr-1"/>Seçimi Onayla</span>
-                </div>
+                    </Link>
+
+                    </div>
             </div>
         </div>
  

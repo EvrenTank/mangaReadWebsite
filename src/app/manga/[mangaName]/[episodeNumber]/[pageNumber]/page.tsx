@@ -7,7 +7,7 @@ const Page =({params}:{
     params : {
         mangaName:string,
         episodeNumber:string,
-        pageNumber:string,
+        pageNumber:string
     }
 })=> {
 
@@ -18,8 +18,9 @@ const Page =({params}:{
 
     return (
         <>
-        <TopDiv  mangaName={params.mangaName} ormp={ormp} setOrmp={setOrmp} tektek={tektek} setTektek={setTektek}/>
-        <ReaderContentDiv ormp={ormp} tektek={tektek} setTektek={setTektek} imgSrc={imgSrc} />
+        <TopDiv  mangaName={params.mangaName} episodeNumber={params.episodeNumber} ormp={ormp} setOrmp={setOrmp} tektek={tektek} setTektek={setTektek}/>
+        <ReaderContentDiv ormp={ormp} tektek={tektek} setTektek={setTektek} imgSrc={imgSrc} episodeNumber={params.episodeNumber}
+        pageNumber={params.pageNumber} mangaName={params.mangaName} />
         </>
     )
 }

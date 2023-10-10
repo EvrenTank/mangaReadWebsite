@@ -9,7 +9,7 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ReadingModeSelector from "./readerContentDivComponents/readingModeSelector";
 import { useState } from "react";
 
-const TopDiv = ({mangaName,ormp,setOrmp,tektek,setTektek}:any) => {
+const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber}:any) => {
     const [clicked,setClicked] = useState(false);
 
     return (
@@ -39,7 +39,7 @@ const TopDiv = ({mangaName,ormp,setOrmp,tektek,setTektek}:any) => {
             </div>
         </div>
         {ormp && 
-              <ReadingModeSelector setTektek={setTektek} setOrmp={setOrmp} tektek={tektek}/>
+              <ReadingModeSelector setTektek={setTektek} setOrmp={setOrmp} tektek={tektek} mangaName={mangaName} episodeNumber={episodeNumber}/>
         }
         </>
     )
