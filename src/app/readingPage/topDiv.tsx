@@ -17,7 +17,7 @@ const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber}:any
         <div  className="px-[20px]  w-[100%] h-[120px] bg-black flex flex-row items-center max-[1000px]:flex-col gap-y-3 max-[1000px]:h-[280px] max-[1000px]:px-0 ">
             <div className="h-full w-1/3 max-[1000px]:h-[120px] max-[1000px]:w-full flex flex-row items-center justify-start gap-4" >
                 <Logo/>
-                <Link href={`/${mangaName}`} className="text-white flex items-center text-[20px] font-semibold tracking-widest"><ArrowBackRoundedIcon/>{mangaName}</Link>
+                <Link href={`/manga/${mangaName}`} className="text-white flex items-center text-[20px] font-semibold tracking-widest capitalize"><ArrowBackRoundedIcon/>{mangaName}</Link>
             </div>
             <div className="h-full w-1/3 max-[1000px]:h-[80px] max-[1000px]:w-full flex items-center justify-center">
             <select id='episodeSelector' className="outline-none text-[18px] rounded-[5px] font-bold p-[8px] w-[250px] max-[1000px]:w-[100%]">
