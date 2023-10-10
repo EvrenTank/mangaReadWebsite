@@ -23,7 +23,7 @@ const MangaPagesDiv = ({episodeImagesFilePath,manga,tektek,imgSrc,episodeNumber,
           setFilelist(response.data.fileList);   
           console.log("deneme"+response.data.fileList);
         })
-      },[]); 
+      },[mangaName]); 
 
 
     const allEpisodes = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
@@ -38,11 +38,11 @@ const MangaPagesDiv = ({episodeImagesFilePath,manga,tektek,imgSrc,episodeNumber,
         </div>
         { tektek?
             
-            <img className='w-[100%] h-auto' src={imgSrc}></img> 
+            <img className='w-[100%] h-auto' alt='image' src={imgSrc}></img> 
             :
             fileList.map((file:any,index)=>{
                 return (
-                    <img className='w-[100%] h-auto' src={`https://manga-images-api-1.vercel.app/manga/${mangaName}/${episodeNumber}/${file.sayiDegeri}`}></img>
+                    <img className='w-[100%] h-auto' alt='image' key={index} src={`https://manga-images-api-1.vercel.app/manga/${mangaName}/${episodeNumber}/${file.sayiDegeri}`}></img>
                 )
             })
        

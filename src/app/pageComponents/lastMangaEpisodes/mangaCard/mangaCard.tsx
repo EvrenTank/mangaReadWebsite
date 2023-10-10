@@ -18,7 +18,7 @@ title={
 } >
 <Link href='/mangaPageComponents'>
         <div className={`aspect-[3/4] shadow-xl bg-white overflow-hidden relative rounded-[10px]`}>
-            <img src={imgSrc} className="w-[100%] h-auto text-center opacity-80" ></img>
+            <img src={imgSrc} alt='image' className="w-[100%] h-auto text-center opacity-80" ></img>
             <div className="absolute left-0 bottom-[8%] w-[100%] h-[20%] "
             style={{
                 background: "linear-gradient(to right,rgba(104,94,255,0.95) 0%,rgba(104,94,255,0.01) 99%,rgba(104,94,255,0) 100%)"
