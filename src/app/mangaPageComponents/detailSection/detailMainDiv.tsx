@@ -4,6 +4,8 @@ import ImageDiv from "./imageandratingDivComponents/imageDiv";
 import RatingDiv from "./imageandratingDivComponents/ratingDiv";
 import FollowDiv from "./imageandratingDivComponents/followDiv";
 import ChaptersDiv from "./chaptersDiv";
+import axios from 'axios';
+
 const DetailMainDiv = ({imgSrc,mangaName}:any) => {
 
     const details = {
