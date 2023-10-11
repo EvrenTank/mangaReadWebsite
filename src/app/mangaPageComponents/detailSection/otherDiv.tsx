@@ -35,7 +35,7 @@ const OtherDiv = ({nedir,goruntuleme,yayinYili,ceviriTamamlanmis,yayinTamamlanmi
                     {
                         kategori.map((category:string,index:number)=>{
                             return(
-                                <Link key={index} href={`/${category}`}>{category} </Link>
+                                <Link key={index} href={`/${category}`}>{category}{index !== kategori.length-1 ?",":""} </Link>
                             )
                         })
                     }

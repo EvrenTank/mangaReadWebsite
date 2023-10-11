@@ -1,3 +1,4 @@
+'use client';
 import OtherDiv from "./otherDiv";
 import SubjectDiv from "./subjectDiv";
 import ImageDiv from "./imageandratingDivComponents/imageDiv";
@@ -5,9 +6,34 @@ import RatingDiv from "./imageandratingDivComponents/ratingDiv";
 import FollowDiv from "./imageandratingDivComponents/followDiv";
 import ChaptersDiv from "./chaptersDiv";
 import axios from 'axios';
+import { useEffect, useState } from "react";
 
 const DetailMainDiv = ({imgSrc,mangaName}:any) => {
 
+    const [details,setDetails] = useState({
+        nedir:'',
+        goruntuleme:'',
+        yayinYili:'',
+        ceviriTamamlanmis:false,
+        yayinTamamlanmis:true,
+        kategori:[],
+        ceviriGrubu:'',
+        konu:"",
+        kullanilanOySayisi:0,
+        rating: 0,
+        takipciSayisi: 0
+    });
+
+    useEffect(()=>{
+        axios.get(`https://manga-images-api-1.vercel.app/manga/${mangaName}`)
+        .then((response)=>{
+            console.log('Bulunan manga==', response.data.bulunanManga);
+          setDetails(response.data.bulunanManga);   
+        })
+      },[]); 
+
+
+    /*
     const details = {
         nedir:'Manga',
         goruntuleme:'10000',
@@ -21,6 +47,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
         rating: 4.5,
         takipciSayisi: 270
     }
+    */
 
     return (
         <>
