@@ -1,29 +1,42 @@
+"use client";
 import TooltipTitle from "./tooltipTitle";
 import CustomTooltip from "../additionalComponents/customizedTooltip";
 import Link from "next/link";
-
+import axios from "axios";
+import {useState, useEffect} from 'react';
 const Card = ({imgSrc,mangaName,addingDate,episodeNumber}:any)=>{
+    const [lastFiveEpisodes,setLastFiveEpisodes] = useState([
+        {
+            name:'',
+            episodeNumber:'',
+            addingDate:''
+        }
+    ]);
+    useEffect(()=>{
+        axios.get(`https://manga-images-api-1.vercel.app/lastEpisodes`)
+        .then((response)=>{
+            console.log('Bulunan manga==', response.data.lastEpisodes);
+            const filteredEpisodes = response.data.lastEpisodes.filter( (episode:any) => episode.name == mangaName);
+          setLastFiveEpisodes(filteredEpisodes.slice(0,5));  
+        })
+      },[]); 
+
+
     return (
 <CustomTooltip 
 
 // Buradaki lastFiveEpisodes degerini de prop olarak alacagim.
 title={
-        <TooltipTitle  lastFiveEpisodes={[
-    { number:'700', name:'İç Savaş', addingDate:'27.08.2023'},
-    { number:'699', name:'Gerilim', addingDate:'27.08.2023'},
-    { number:'698', name:'Geri Dönüş', addingDate:'27.08.2023'},
-    { number:'697', name:'Saldırı:2', addingDate:'27.08.2023'},
-    { number:'696', name:'Saldırı:1', addingDate:'27.08.2023'}
-  ]}/>
+        <TooltipTitle mangaName={mangaName} lastFiveEpisodes={lastFiveEpisodes}/>
 } >
-<Link href='/mangaPageComponents'>
+<Link href={`/manga/${mangaName}`}>
         <div className={`aspect-[3/4] shadow-xl bg-white overflow-hidden relative rounded-[10px]`}>
             <img src={imgSrc} alt='image' className="w-[100%] h-auto text-center opacity-80" ></img>
             <div className="absolute left-0 bottom-[8%] w-[100%] h-[20%] "
             style={{
                 background: "linear-gradient(to right,rgba(104,94,255,0.95) 0%,rgba(104,94,255,0.01) 99%,rgba(104,94,255,0) 100%)"
             }}>
-                <span className=" w-[100%] text-white h-[50%] flex items-center pl-[10px]"><small className="text-[60%]">{addingDate} önce eklendi.</small></span>
+                <span className=" w-[100%] text-white h-[50%] flex items-center pl-[10px]"><small className="text-[60%]">{addingDate} gün önce eklendi.</small></span>
                 <span className=" w-[100%] text-white h-[50%] flex items-center pl-[10px]"><small className="text-[60%]">Bölüm {episodeNumber}</small></span>
             
             </div>
