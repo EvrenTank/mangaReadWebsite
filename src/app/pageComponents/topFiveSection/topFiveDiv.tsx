@@ -8,31 +8,36 @@ const TopDiv = ({topFive}:any) => {
     const [topFiveManga, setTopFiveManga] = useState(
         [
     {
-        mangaName:'Naruto',
+        mangaName:'naruto',
+        title:'Naruto',
         situation:'Tamamlandı',
         lastEpisode:'700',
         imgSrc:'/lastMangaEpisodes/naruto.jpg',
     },
     {
-        mangaName:'One Piece',
+        mangaName:'onepiece',
+        title:'One Piece',
         situation:'Tamamlanmadı',
         lastEpisode:'1092',
         imgSrc:'/lastMangaEpisodes/onepiece.jpg',
     },
     {
-        mangaName:'Black Clover',
+        mangaName:'beelzebub',
+        title:'Beelzebub',
         situation:'Tamamlanmadı',
         lastEpisode:'350',
-        imgSrc:'/lastMangaEpisodes/blackclover.jpg',
+        imgSrc:'/lastMangaEpisodes/beelzebub.jpg',
     },
     {
-        mangaName:'One Punch Man',
+        mangaName:'onepunchman',
+        title:'One Punch Man',
         situation:'Tamamlanmadı',
         lastEpisode:'192',
         imgSrc:'/lastMangaEpisodes/onepunchman.jpg',
     },
     {
-        mangaName:'Bleach',
+        mangaName:'bleach',
+        title:'Bleach',
         situation:'Tamamlandı',
         lastEpisode:'600',
         imgSrc:'/lastMangaEpisodes/bleach.jpg',
@@ -52,7 +57,7 @@ const colors = ['bg-purple-600','bg-purple-500','bg-purple-400','bg-purple-300',
             {
                 topFiveManga.map((manga,index)=>{
                     return (
-                        <ListElement key={index} mangaName={manga.mangaName} situation={manga.situation} 
+                        <ListElement key={index} mangaName={manga.mangaName} situation={manga.situation} title={manga.title}    
                         lastEpisode={manga.lastEpisode} imgSrc={manga.imgSrc} index={index+1} color={colors[index]} />
                     )
                 })

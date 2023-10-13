@@ -1,5 +1,15 @@
+'use client';
 import Link from "next/link";
-const TooltipTitle = ({lastFiveEpisodes,mangaName}:any) => {
+import { useState,useEffect } from "react";
+const TooltipTitle = ({mangaName,episodes}:any) => {
+    const[lastFiveEpisodes,setLastFiveEpisodes] = useState([]);
+
+    useEffect(()=>{
+        const filteredEpisodes = episodes.filter( (episode:any) => episode.name == mangaName);
+        setLastFiveEpisodes(filteredEpisodes.slice(0,5));
+
+    },[])
+
     return (
      <div id='tooltipTitle' className="w-[100%] max-w-[450px] h-[25vh] shadow-lg  z-20 bg-white  font-sans rounded-[5px] ">
         {

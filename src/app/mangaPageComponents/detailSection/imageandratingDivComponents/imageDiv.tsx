@@ -1,4 +1,4 @@
-const ImageDiv =  ({imgSrc,mangaName}:any) => {
+const ImageDiv =  ({imgSrc,title}:any) => {
     return (
         <div className="w-[100%] h-[400px] rounded-[5px] " 
         style={{
@@ -12,7 +12,7 @@ const ImageDiv =  ({imgSrc,mangaName}:any) => {
          background: 'linear-gradient(to bottom,rgba(104,94,255,0) 0%,rgba(104,94,255,0.85) 100%)'
      }}>
          <div className='w-full h-[25%] p-[20px] absolute bottom-0 tracking-wider'>
-             <span className="font-semibold text-white text-[20px] capitalize">{mangaName}</span>
+             <span className="font-semibold text-white text-[20px] capitalize">{title}</span>
          </div>
      </div>
  </div>

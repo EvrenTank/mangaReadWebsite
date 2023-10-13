@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 const DetailMainDiv = ({imgSrc,mangaName}:any) => {
 
     const [details,setDetails] = useState({
+        name:'',
+        title:'',
         nedir:'',
         goruntuleme:'',
         yayinYili:'',
@@ -27,7 +29,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
     useEffect(()=>{
         axios.get(`https://manga-images-api-1.vercel.app/manga/${mangaName}`)
         .then((response)=>{
-            console.log('Bulunan manga==', response.data.bulunanManga);
+          //console.log('Bulunan manga==', response.data.bulunanManga);
           setDetails(response.data.bulunanManga);   
         })
       },[]); 
@@ -55,7 +57,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
          max-[1000px]:flex max-[1000px]:flex-col">
             <div id='imgveratingkartıkapsayandiv' className="w-[33%] p-[10px] min-[1001px]:max-w-[400px] max-[1000px]:w-[100%] max-[1000px]:static  rounded-[5px] flex flex-col absolute top-0 left-0 justify-center items-center">
                 <RatingDiv kullanilanOySayisi={details.kullanilanOySayisi} rating={details.rating} />
-                <ImageDiv imgSrc={imgSrc} mangaName={mangaName} />
+                <ImageDiv imgSrc={imgSrc} title={details.title} />
                 <FollowDiv takipciSayisi={details.takipciSayisi}/>
             </div>
             <div id='subjectdivveotherdivdivlerinikapsayandiv' className="w-[66%]  h-full float-right  flex flex-row max-[1000px]:w-[100%] max-[1000px]:flex-col ">
@@ -76,7 +78,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
             </div>
         </div>
         <div id='chaptersdivikapsayandiv' className="w-[66%] max-[1000px]:w-[100%] h-[500px] ">
-            <ChaptersDiv/>
+            <ChaptersDiv mangaName={mangaName}/>
             
 
         </div>

@@ -1,9 +1,7 @@
 import Link from "next/link";
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-const Navbar = ({clickEvent}:any) => {
-
-
+const Navbar = ({clickEvent,hideEvent}:any) => {
 
     return (
         <>
@@ -45,9 +43,12 @@ const Navbar = ({clickEvent}:any) => {
             </div>
         </nav>
         <nav className='min-[1001px]:hidden max-[1001px]:flex h-[100%]  justify-center items-center bg-violet-600 '
-        onClick={clickEvent}>
+        onClick={()=>{
+            hideEvent();
+            clickEvent();
+        }}>
         <div className='h-[50%] aspect-square mr-[30px] flex justify-center rounded-md items-center bg-[rgba(0,0,0,0.2)]'>
-            <MenuIcon className="w-[60%] h-[60%] text-white "/>
+            <MenuIcon className="w-[60%] h-[60%] text-white"  />
         </div>
         </nav>
         </>

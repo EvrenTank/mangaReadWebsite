@@ -1,14 +1,11 @@
 import Link from "next/link";
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 
-const NavbarVertical = ({open}:any) => {
+const NavbarVertical = ({open,myRef}:any) => {
     return (
         // Bundaki acilisi daha sonradan serimanga.com'daki ile ayni yapmaya calismam lazim. Simdilik boyle kalsin.
-        <nav className={`${open ? 'max-[1000px]:flex':'max-[1000px]:hidden'} 
-                         ${!open && 'max-[1000px]:h-0'} 
-                         ${open ? 'min-[1000px]:hidden':'min-[1000px]:hidden'} 
-                         
-                         flex-col  w-[100vw] justify-center items-center bg-violet-700  min-[1001px]:hidden'`}>
+        <nav ref={myRef} className={`
+            flex flex-col w-[100vw] justify-center items-center bg-violet-700  min-[1001px]:hidden  `}>
             <ul className="w-[100vw] flex flex-col">
                 <li className='text-white p-[15px] w-[100vw] hover:bg-violet-800 border-l-[1px] font-bold text-[14px] flex justify-start items-center'><Link href="https://anizm.net" target="_blank">ANİME</Link></li>
                 <li className='text-white p-[15px] w-[100vw] hover:bg-violet-800 border-l-[1px] font-bold text-[14px] flex justify-start items-center'><Link href="https://felisnovel.com" target="_blank">NOVEL OKU</Link></li>
