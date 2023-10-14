@@ -8,7 +8,7 @@ const TooltipTitle = ({mangaName,episodes}:any) => {
         const filteredEpisodes = episodes.filter( (episode:any) => episode.name == mangaName);
         setLastFiveEpisodes(filteredEpisodes.slice(0,5));
 
-    },[mangaName])
+    },[mangaName,episodes])
 
     return (
      <div id='tooltipTitle' className="w-[100%] max-w-[450px] h-[25vh] shadow-lg  z-20 bg-white  font-sans rounded-[5px] ">

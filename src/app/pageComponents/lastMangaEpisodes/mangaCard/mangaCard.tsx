@@ -32,7 +32,7 @@ const Card = ({imgSrc,mangaName,addingDate,episodeNumber,title}:any)=>{
             const newLastFiveEpisodes = filteredEpisodes.slice(0,5);
             setLastFiveEpisodes(newLastFiveEpisodes);  
         })
-      },[]); 
+      },[mangaName]); 
 
 
     return (
