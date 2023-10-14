@@ -1,16 +1,24 @@
 'use client';
 import Logo from "../header/logo";
 import Link from "next/link";
+import {useRouter} from 'next/navigation';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import CircleRoundedIcon from '@mui/icons-material/CircleRounded';
 import InfoSharpIcon from '@mui/icons-material/InfoSharp';
 import SettingsSharpIcon from '@mui/icons-material/SettingsSharp';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import ReadingModeSelector from "./readerContentDivComponents/readingModeSelector";
-import { useState } from "react";
+import { useState,useRef } from "react";
 
-const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber}:any) => {
+const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber, lastEpisodes}:any) => {
+    
     const [clicked,setClicked] = useState(false);
+    const router = useRouter();
+    const myRef = useRef<null | HTMLSelectElement>(null);
+
+    const onChangeEvent = () => {
+        tektek ? router.push(`/manga/${mangaName}/${myRef.current!.value}/1`) : router.push(`/manga/${mangaName}/${myRef.current!.value}`); 
+    }
 
     return (
         <>
@@ -20,13 +28,17 @@ const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber}:any
                 <Link href={`/manga/${mangaName}`} className="text-white flex items-center text-[20px] font-semibold tracking-widest capitalize"><ArrowBackRoundedIcon/>{mangaName}</Link>
             </div>
             <div className="h-full w-1/3 max-[1000px]:h-[80px] max-[1000px]:w-full flex items-center justify-center">
-            <select id='episodeSelector' className="outline-none text-[18px] rounded-[5px] font-bold p-[8px] w-[250px] max-[1000px]:w-[100%]">
-                <option value='1'>Bölüm 1</option>
-                <option value='2'>Bölüm 2</option>
-                <option value='3'>Bölüm 3</option>
-                <option value='4'>Bölüm 4</option>
-                <option value='5'>Bölüm 5</option>
-
+            <select id='episodeSelector' ref={myRef} 
+            onChange={onChangeEvent} 
+            className="outline-none text-[18px] rounded-[5px] font-bold p-[8px] w-[250px] max-[1000px]:w-[100%]">
+                {
+                    lastEpisodes.map((episode:any, index:number)=>{
+                        return (
+                           <option  value ={episode.episodeNumber} 
+                           selected={episode.episodeNumber == episodeNumber ?  true: false}>Bölüm {episode.episodeNumber}</option>
+                        )
+                    })
+                }
             </select>
                 
             </div>

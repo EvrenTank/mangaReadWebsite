@@ -11,7 +11,7 @@ const ListElement = ({mangaName,situation,lastEpisode,imgSrc,index,color,title}:
                 backgroundSize: "cover"
             }}></span>
             <span className="inline-flex w-[calc(100%-72px)] h-[100%] flex-col absolute top-0 justify-center" >
-                <span className="ml-[10px] font-semibold text-[125%] hover:text-purple-400" >{title}</span>
+                <span className="ml-[10px] text-black font-semibold text-[125%] hover:text-purple-400" >{title}</span>
                 <span className="text-[70%] ml-[10px] text-gray-400">{situation}, {lastEpisode}.Bölüm</span>   
             </span>
             <span className="h-[40%] aspect-square absolute right-[20px] top-[30%]">
