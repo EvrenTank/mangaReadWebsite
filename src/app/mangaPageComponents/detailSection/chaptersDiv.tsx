@@ -30,10 +30,7 @@ const ChaptersDiv = ({mangaName}:any) => {
             setLoaded(true);
           //console.log("Last five episodes ::", lastFiveEpisodes);
         })
-      },[]); 
-      useEffect(()=>{
-        console.log("filtered Episodes::", lastEpisodes);
-      },[])
+      },[mangaName]); 
 
     return (
         <div className="w-[100%] p-[10px] flex flex-col items-center bg-white mt-[20px]">

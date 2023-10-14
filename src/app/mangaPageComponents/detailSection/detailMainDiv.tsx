@@ -32,7 +32,7 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
           //console.log('Bulunan manga==', response.data.bulunanManga);
           setDetails(response.data.bulunanManga);   
         })
-      },[]); 
+      },[mangaName]); 
 
 
     /*

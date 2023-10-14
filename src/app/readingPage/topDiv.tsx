@@ -34,7 +34,7 @@ const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber, las
                 {
                     lastEpisodes.map((episode:any, index:number)=>{
                         return (
-                           <option  value ={episode.episodeNumber} 
+                           <option key={index} value ={episode.episodeNumber} 
                            selected={episode.episodeNumber == episodeNumber ?  true: false}>Bölüm {episode.episodeNumber}</option>
                         )
                     })

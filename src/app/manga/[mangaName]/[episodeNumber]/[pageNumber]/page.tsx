@@ -22,7 +22,7 @@ const Page =({params}:{
                 return episode.name == params.mangaName});            
             setLastEpisodes(filteredEpisodes);
         })
-      },[]); 
+      },[params.mangaName]); 
 
     const imgSrc = `https://manga-images-api-1.vercel.app/manga/${params.mangaName}/${params.episodeNumber}/${params.pageNumber}`;
 
