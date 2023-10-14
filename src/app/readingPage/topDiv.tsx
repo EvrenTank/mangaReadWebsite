@@ -30,7 +30,7 @@ const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber, las
             <div className="h-full w-1/3 max-[1000px]:h-[80px] max-[1000px]:w-full flex items-center justify-center">
             <select id='episodeSelector' ref={myRef} 
             onChange={onChangeEvent} 
-            className="outline-none text-[18px] rounded-[5px] font-bold p-[8px] w-[250px] max-[1000px]:w-[100%]">
+            className="outline-none text-[18px] rounded-[5px] font-bold p-[8px] w-[250px] max-[1000px]:w-[100%] text-black bg-white">
                 { lastEpisodes &&
                     lastEpisodes.map((episode:any, index:number)=>{
                         return (

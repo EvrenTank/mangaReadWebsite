@@ -37,7 +37,8 @@ const Page =({params}:{
         <>
         <TopDiv  mangaName={params.mangaName} episodeNumber={params.episodeNumber} ormp={ormp} setOrmp={setOrmp} tektek={tektek} setTektek={setTektek} lastEpisodes={lastEpisodes} />
         <ReaderContentDiv ormp={ormp} tektek={false} setTektek={setTektek} imgSrc={imgSrc} episodeNumber={params.episodeNumber}
-         mangaName={params.mangaName} />
+         mangaName={params.mangaName} biggestEpisodeNumber={lastEpisodes[0].episodeNumber}
+         smallestEpisodeNumber={lastEpisodes[lastEpisodes.length-1].episodeNumber} />
         </>
     )
 }

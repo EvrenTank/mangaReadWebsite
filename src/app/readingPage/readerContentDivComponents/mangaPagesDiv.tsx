@@ -15,7 +15,10 @@ const MangaPagesDiv = ({episodeImagesFilePath,manga,tektek,imgSrc,episodeNumber,
     }
     console.log("imgSrc"+imgSrc);
 
-    const [fileList, setFilelist] = useState([1,2,3,4,5])
+    const [fileList, setFilelist] = useState([{
+        dosyaAdi:'',
+        sayiDegeri:''
+    }])
     
      useEffect(()=>{
         axios.get(`https://manga-images-api-1.vercel.app/manga/${mangaName}/${episodeNumber}`)
@@ -32,7 +35,7 @@ const MangaPagesDiv = ({episodeImagesFilePath,manga,tektek,imgSrc,episodeNumber,
         <div id='mangaPagesDiv-component-enusttekidiv' className={`w-full min-h-[400px] flex justify-center relative ${!tektek && 'flex-col gap-y-5' }`}>
         <div className='group absolute top-[0] left-[0px] z-10 w-[80px] h-[100%] bg-transparent text-[#22E5DE]'>
             {tektek && 
-            <Link href={`/manga/${mangaName}/${episodeNumber}/${(parseInt(pageNumber)-1)}`}><div onClick={leftClick} className="w-[80px] aspect-square bg-white border-2 border-[#22E5DE]  absolute left-[calc(50%-25px)] top-[calc(50%-25px)]  opacity-0 group-hover:opacity-100 hover:text-[#1BB6B1] hover:border-[#1BB6B1] duration-1000 flex justify-center items-center rounded-[50%] cursor-pointer">
+            <Link href={`/manga/${mangaName}/${episodeNumber}/${pageNumber == 1 ? pageNumber :(parseInt(pageNumber)-1)}`}><div onClick={leftClick} className="w-[80px] aspect-square bg-white border-2 border-[#22E5DE]  absolute left-[calc(50%-25px)] top-[calc(50%-25px)]  opacity-0 group-hover:opacity-100 hover:text-[#1BB6B1] hover:border-[#1BB6B1] duration-1000 flex justify-center items-center rounded-[50%] cursor-pointer">
                 <ArrowBackIosNewIcon className="text-[50px]"/>
             </div></Link>}
         </div>
@@ -50,7 +53,7 @@ const MangaPagesDiv = ({episodeImagesFilePath,manga,tektek,imgSrc,episodeNumber,
         
         <div className='group absolute top-[0]  right-[0px] z-10 w-[80px] h-[100%] bg-transparent text-[#22E5DE]' >
             {tektek && 
-            <Link href={`/manga/${mangaName}/${episodeNumber}/${(parseInt(pageNumber)+1)}`}><div onClick={rightClick} className="w-[80px] aspect-square bg-white border-2 border-[#22E5DE] absolute right-[calc(50%-25px)] top-[calc(50%-25px)] opacity-0 group-hover:opacity-100 hover:text-[#1BB6B1] hover:border-[#1BB6B1] duration-1000 flex justify-center items-center rounded-[50%] cursor-pointer">
+            <Link href={`/manga/${mangaName}/${episodeNumber}/${ pageNumber == fileList[fileList.length-1].sayiDegeri ? pageNumber :(parseInt(pageNumber)+1)}`}><div onClick={rightClick} className="w-[80px] aspect-square bg-white border-2 border-[#22E5DE] absolute right-[calc(50%-25px)] top-[calc(50%-25px)] opacity-0 group-hover:opacity-100 hover:text-[#1BB6B1] hover:border-[#1BB6B1] duration-1000 flex justify-center items-center rounded-[50%] cursor-pointer">
                 <ArrowForwardIosIcon className="text-[50px]"/>
             </div></Link> }
         </div>
