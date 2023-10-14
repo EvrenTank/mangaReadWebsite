@@ -17,7 +17,7 @@ const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber, las
     const myRef = useRef<null | HTMLSelectElement>(null);
 
     const onChangeEvent = () => {
-        tektek ? router.push(`/manga/${mangaName}/${myRef.current!.value}/1`) : router.push(`/manga/${mangaName}/${myRef.current!.value}`); 
+        tektek ? router.push(`/manga/${mangaName}/${myRef.current?.value}/1`) : router.push(`/manga/${mangaName}/${myRef.current?.value}`); 
     }
 
     return (
