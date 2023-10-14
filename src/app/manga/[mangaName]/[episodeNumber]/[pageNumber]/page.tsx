@@ -13,7 +13,15 @@ const Page =({params}:{
 
     const [ormp,setOrmp] = useState(false);  //ormp: open reading mode page
     const [tektek,setTektek] = useState(true); //tektek: teker teker okuma modu
-    const [lastEpisodes,setLastEpisodes] = useState([]); //tektek: teker teker okuma modu
+    const [lastEpisodes,setLastEpisodes] = useState([
+        {
+            name:'',
+            title:'',
+            episodeNumber:'',
+            addingDate:''
+        }
+
+    ]); //tektek: teker teker okuma modu
 
     useEffect(()=>{
         axios.get(`https://manga-images-api-1.vercel.app/lastEpisodes`)
