@@ -10,8 +10,7 @@ const Page =()=> {
 
     return (
         <>
-        <TopDiv mangaName='Naruto' ormp={ormp} setOrmp={setOrmp} tektek={tektek} setTektek={setTektek}/>
-        <ReaderContentDiv ormp={ormp} tektek={tektek} setTektek={setTektek} />
+       
         </>
     )
 }
