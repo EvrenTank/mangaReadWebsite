@@ -5,11 +5,9 @@ import MainDiv from "../pageComponents/lastMangaEpisodes/mainDiv";
 
 const Home = ()=>{
     return (
-      <>
-      <Header/>
-      <MangaSlider/>
-      <MainDiv/>
-      </>
+      <div>
+
+      </div>
     );
 }
 export default Home;
