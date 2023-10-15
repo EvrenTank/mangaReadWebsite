@@ -11,6 +11,7 @@ const ChaptersDiv = ({mangaName}:any) => {
             name:'',
             title:'',
             episodeNumber:'',
+            episodeName:'',
             addingDate:''
         }
     ])
@@ -40,7 +41,7 @@ const ChaptersDiv = ({mangaName}:any) => {
                     lastEpisodes.map((episode,index) =>{
                         return (
            
-                            <ChapterListElement key={index} mangaName={mangaName} episodeNumber={episode.episodeNumber} episodeTitle='Mücadele' okunmaSayisi='11200' eklenmeTarihi={episode.addingDate}></ChapterListElement>
+                            <ChapterListElement key={index} mangaName={mangaName} episodeNumber={episode.episodeNumber} episodeName={episode.episodeName} okunmaSayisi='11200' eklenmeTarihi={episode.addingDate}></ChapterListElement>
 
                         )
                     })

@@ -15,8 +15,8 @@ const TooltipTitle = ({mangaName,episodes}:any) => {
         {
             lastFiveEpisodes.map((episode:any,index:number)=>{
                 return (
-                    <div key={index} className="w-[100%] h-[16%] text-[2vh] border-b-[1px] hover:bg-emerald-200 text-[rgba(0,0,0,0.7)] flex justify-between items-center">
-                        <Link href={`/manga/${episode.name}/${episode.episodeNumber}/1`}><span className="pl-[10px]">{episode.episodeNumber} {episode.name}</span></Link>
+                    <div key={index} className="w-[100%] h-[16%] text-[1.7vh] border-b-[1px] hover:bg-emerald-200 text-[rgba(0,0,0,0.7)] flex justify-between items-center">
+                        <Link href={`/manga/${episode.name}/${episode.episodeNumber}/1`}><span className="pl-[10px]">{episode.episodeNumber}: {episode.episodeName}</span></Link>
                         <span className="pr-[10px]">{episode.addingDate}</span>
                     </div>
                 )

@@ -3,7 +3,7 @@ import Card from "./mangaCard";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-const MangaCardList = () => {
+const MangaCardList = ({index}:any) => {
     const [lastepisodes,setLastepisodes] = useState([
         {
             name:'',
@@ -16,7 +16,7 @@ const MangaCardList = () => {
     useEffect(()=>{
         axios.get(`https://manga-images-api-1.vercel.app/lastEpisodes`)
         .then((response)=>{
-          setLastepisodes(response.data.lastEpisodes.slice(0,12));  
+          setLastepisodes(response.data.lastEpisodes.slice(12*(index-1),12*index));  
         })
       },[]); 
 
@@ -24,7 +24,7 @@ const MangaCardList = () => {
         var today = new Date();
         var dateArray = addingDate.split('.');
         var arrangedDate = new Date(Number(dateArray[2]), Number(dateArray[1]) - 1, Number(dateArray[0]));
-        var dayDifference = Math.floor(((arrangedDate.getTime()) - today.getTime()) / (1000 * 60 * 60 * 24))*-1;
+        var dayDifference = (Math.floor(((arrangedDate.getTime()) - today.getTime()) / (1000 * 60 * 60 * 24))*-1)-1;
         //console.log('Day Difference: ' , dayDifference);
         return dayDifference == 0 ? 'Bugün' : (dayDifference+" gün önce") ;
       }

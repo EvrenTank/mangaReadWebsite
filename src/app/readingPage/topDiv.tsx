@@ -22,27 +22,27 @@ const TopDiv = ({mangaName, ormp, setOrmp, tektek, setTektek, episodeNumber, las
 
     return (
         <>
-        <div  className="px-[20px]  w-[100%] h-[120px] bg-black flex flex-row items-center max-[1000px]:flex-col gap-y-3 max-[1000px]:h-[280px] max-[1000px]:px-0 ">
-            <div className="h-full w-1/3 max-[1000px]:h-[120px] max-[1000px]:w-full flex flex-row items-center justify-start gap-4" >
+        <div  className="px-[20px]  w-[100%] h-[120px] bg-black flex flex-row items-center max-[1200px]:flex-col gap-y-3 max-[1200px]:h-[280px] max-[1200px]:px-0 ">
+            <div className="h-full w-1/3 max-[1200px]:h-[120px] max-[1200px]:w-full flex flex-row items-center justify-start gap-4" >
                 <Logo/>
-                <Link href={`/manga/${mangaName}`} className="text-white flex items-center text-[20px] font-semibold tracking-widest capitalize"><ArrowBackRoundedIcon/>{mangaName}</Link>
+                <Link href={`/manga/${mangaName}`} className="text-white flex items-center text-[20px] font-semibold tracking-widest capitalize"><ArrowBackRoundedIcon/>{lastEpisodes[0].title}</Link>
             </div>
-            <div className="h-full w-1/3 max-[1000px]:h-[80px] max-[1000px]:w-full flex items-center justify-center">
+            <div className="h-full w-1/3 max-[1200px]:h-[80px] max-[1200px]:w-full flex items-center justify-center ">
             <select id='episodeSelector' ref={myRef} 
             onChange={onChangeEvent} 
-            className="outline-none text-[18px] rounded-[5px] font-bold p-[8px] w-[250px] max-[1000px]:w-[100%] text-black bg-white">
+            className="outline-none text-[16px] rounded-[5px] font-bold p-[8px] w-[300px] max-[1200px]:w-[100%] text-black bg-white">
                 { lastEpisodes &&
                     lastEpisodes.map((episode:any, index:number)=>{
                         return (
                            <option key={index} value ={episode.episodeNumber} 
-                           selected={episode.episodeNumber == episodeNumber ?  true: false}>Bölüm {episode.episodeNumber}</option>
+                           selected={episode.episodeNumber == episodeNumber ?  true: false}>Bölüm {episode.episodeNumber}: {episode.episodeName}</option>
                         )
                     })
                 }
             </select>
                 
             </div>
-            <div className="h-full w-1/3 max-[1000px]:h-[80px]  max-[1000px]:w-full max-[1000px]:justify-between flex items-center justify-end   content-center gap-3 text-[19px] flex-wrap ">  
+            <div className="h-full w-1/3 max-[1200px]:h-[80px]  max-[1200px]:w-full max-[1200px]:justify-between flex items-center justify-end   content-center gap-3 text-[19px] flex-wrap ">  
                 <span className='text-white flex items-center gap-1 cursor-pointer' 
                 onClick={()=>{setClicked(clicked=>!clicked);}} >{clicked?<CheckCircleRoundedIcon/>:<CircleRoundedIcon/>}Okudum</span>
                 <span className="text-white hover:text-[#685EFF] duration-200 flex items-center gap-1 cursor-pointer"><InfoSharpIcon/>Sorun Bildir</span>

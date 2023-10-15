@@ -3,46 +3,39 @@ import ListElement from "./listElement";
 import Link from "next/link";
 import {useState} from 'react';
 
-const TopDiv = ({topFive}:any) => {
+const TopFiveDiv = ({topFive,lastEpisodes}:any) => {
 
     const [topFiveManga, setTopFiveManga] = useState(
         [
     {
         mangaName:'naruto',
-        title:'Naruto',
         situation:'Tamamlandı',
-        lastEpisode:'700',
-        imgSrc:'/lastMangaEpisodes/naruto.jpg',
     },
     {
         mangaName:'onepiece',
-        title:'One Piece',
         situation:'Tamamlanmadı',
-        lastEpisode:'1092',
-        imgSrc:'/lastMangaEpisodes/onepiece.jpg',
     },
     {
         mangaName:'beelzebub',
-        title:'Beelzebub',
         situation:'Tamamlanmadı',
-        lastEpisode:'350',
-        imgSrc:'/lastMangaEpisodes/beelzebub.jpg',
     },
     {
         mangaName:'onepunchman',
-        title:'One Punch Man',
         situation:'Tamamlanmadı',
-        lastEpisode:'192',
-        imgSrc:'/lastMangaEpisodes/onepunchman.jpg',
     },
     {
         mangaName:'bleach',
-        title:'Bleach',
         situation:'Tamamlandı',
-        lastEpisode:'600',
-        imgSrc:'/lastMangaEpisodes/bleach.jpg',
     },
 ])
+
+const findElement = (name:string)=>{
+    const lastEpisode = lastEpisodes.find((episode:any) => episode.name === name);
+    return {
+         lastEpisodeNumber:lastEpisode?.episodeNumber,
+         lastAddingDate:lastEpisode?.addingDate,
+         title:lastEpisode?.title} ;
+}
     
 const colors = ['bg-purple-600','bg-purple-500','bg-purple-400','bg-purple-300','bg-purple-200'];
 
@@ -50,15 +43,23 @@ const colors = ['bg-purple-600','bg-purple-500','bg-purple-400','bg-purple-300',
     return (
         <div className="w-[85%] min-w-[320px] bg-white shadow-2xl p-[15px] rounded-[5px]">
             <div className="h-[40px] w-[100%] pl-[5px] pr-[5px] border-b-[1px] border-gray-300 flex items-center justify-between">
-                <h1 className="inline">TOP 5</h1>
-                <Link href='/'><h1 className="inline ">TÜMÜNÜ GÖR</h1></Link>
+                <span>
+                <span className='w-[12px] inline-block aspect-square'  style={{
+                    background: "linear-gradient(to right,#d8d7e6 2px,transparent 2px,rgba(255,255,255,0) 5px,#9d9bc2 5px,#9d9bc2 7px,rgba(255,255,255,0) 7px,#ffffff 10px,#363183 10px,#363183 12px,rgba(255,255,255,0))"
+                }}></span>
+                <h1 className="inline text-black ml-[3px]">TOP 5</h1>
+                </span>
+                <Link href='/'><h1 className="inline text-black ">TÜMÜNÜ GÖR</h1></Link>
             </div>
             <div className="px-[5px] w-[100%] ">
             {
                 topFiveManga.map((manga,index)=>{
                     return (
-                        <ListElement key={index} mangaName={manga.mangaName} situation={manga.situation} title={manga.title}    
-                        lastEpisode={manga.lastEpisode} imgSrc={manga.imgSrc} index={index+1} color={colors[index]} />
+                        <ListElement key={index} 
+                        mangaName={manga.mangaName} situation={manga.situation} 
+                        title={findElement(manga.mangaName).title}    
+                        lastEpisode={findElement(manga.mangaName).lastEpisodeNumber} 
+                        imgSrc={`/lastMangaEpisodes/${manga.mangaName}.jpg`} index={index+1} color={colors[index]} />
                     )
                 })
             }
@@ -68,4 +69,4 @@ const colors = ['bg-purple-600','bg-purple-500','bg-purple-400','bg-purple-300',
         </div>
     )
 }
-export default TopDiv;
+export default TopFiveDiv;

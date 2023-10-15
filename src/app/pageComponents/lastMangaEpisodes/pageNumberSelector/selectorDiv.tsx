@@ -1,7 +1,7 @@
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
-const SelectorDiv = ({iconOption,pageNumber,setFirstpagenumber,firstpagenumber,onClickEvent }:any) => {
+const SelectorDiv = ({iconOption,pageNumber,setFirstpagenumber,firstpagenumber,onClickEvent,setIndex,index }:any) => {
     return (
         //group ve group-hover kavrami parent elemente hover olması durumunda child elementte stil degisikligi yapmaya yarar.
         <div 
@@ -11,6 +11,7 @@ const SelectorDiv = ({iconOption,pageNumber,setFirstpagenumber,firstpagenumber,o
             onClickEvent == undefined ? ()=>{
                 setTimeout(()=>{
                  setFirstpagenumber(pageNumber);
+                 setIndex(pageNumber);
                 },1000)
              } :
              onClickEvent

@@ -36,9 +36,8 @@ const GenresDiv = () => {
                 <span className='w-[12px] inline-block aspect-square' 
                 style={{
                     background: "linear-gradient(to right,#d8d7e6 2px,transparent 2px,rgba(255,255,255,0) 5px,#9d9bc2 5px,#9d9bc2 7px,rgba(255,255,255,0) 7px,#ffffff 10px,#363183 10px,#363183 12px,rgba(255,255,255,0))"
-
                 }} ></span>
-                <h2 className='inline-block ml-[3px]'>TÜRLER</h2>
+                <h2 className='inline-block ml-[3px] text-black'>TÜRLER</h2>
             </div>
             <ul className="w-[100%] grid grid-cols-2 gap gap:border-[1px] max-[1250px]:grid-cols-1 "
            >

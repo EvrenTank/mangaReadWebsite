@@ -5,7 +5,7 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import SlidingDiv from './slidingDiv';
 import { useState } from 'react';
 
-const MangaSlider = () => {
+const MangaSlider = ({lastEpisodes}:any) => {
 
     const [translation,setTranslation] = useState(0);
     const [istrue,setTrue] = useState(false);
@@ -25,6 +25,11 @@ const MangaSlider = () => {
     }
     const translateValue = translation * -100;
 
+    const findElement = (name:string)=>{
+        const lastEpisode = lastEpisodes.find((episode:any) => episode.name === name);
+        return {lastEpisodeNumber:lastEpisode?.episodeNumber, lastAddingDate:lastEpisode?.addingDate} ;
+    }
+
 
 
     return (
@@ -42,11 +47,11 @@ const MangaSlider = () => {
                 transform : `translateX(${translateValue}vw)`,
                 transitionDuration: istrue  ? '0s' : '1s'
             }}>
-                <SlidingDiv color={'bg-white'} imgSrc='/mangaSliderImages/naruto.png' episodeNumber='256' date='19:41 - 25.09.2023'/>
-                <SlidingDiv color={'bg-green-700'} imgSrc='/mangaSliderImages/onePiece.png' episodeNumber='256' date='19:05 - 24.09.2023'/>
-                <SlidingDiv color={'bg-blue-400'} imgSrc='/mangaSliderImages/blackclover.png' episodeNumber='256' date='20:41 - 25.09.2023'/>
-                <SlidingDiv color={'bg-red-800'} imgSrc='/mangaSliderImages/onePunchMan.png' episodeNumber='256' date='08:41 - 26.08.2023'/>
-                <SlidingDiv color={'bg-lime-900'} imgSrc='/mangaSliderImages/beelzebub.png' episodeNumber='256' date='19:41 - 25.09.2023'/>
+                <SlidingDiv color={'bg-gray-100'} imgSrc='/mangaSliderImages/naruto.png' episodeNumber={findElement("naruto").lastEpisodeNumber} date={`19:41 - ${findElement("naruto").lastAddingDate}`} />
+                <SlidingDiv color={'bg-green-400'} imgSrc='/mangaSliderImages/onePiece.png' episodeNumber={findElement("onepiece").lastEpisodeNumber} date={`19:05 - ${findElement("onepiece").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-blue-400'} imgSrc='/mangaSliderImages/blackclover.png' episodeNumber={findElement("blackclover").lastEpisodeNumber} date={`19:41 - ${findElement("blackclover").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-red-100'} imgSrc='/mangaSliderImages/onepunchman.png' episodeNumber={findElement("onepunchman").lastEpisodeNumber} date={`08:41 - ${findElement("onepunchman").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-lime-500'} imgSrc='/mangaSliderImages/beelzebub.png' episodeNumber={findElement("beelzebub").lastEpisodeNumber} date={`19:41 - ${findElement("beelzebub").lastAddingDate}`}/>
 
             </div>
 

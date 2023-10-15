@@ -3,7 +3,7 @@
 import SelectorDiv from './selectorDiv';
 import {useState} from 'react';
 
-const PageNumberSelector = ({}:any) => {
+const PageNumberSelector = ({index,setIndex}:any) => {
     
     const [firstpagenumber,setFirstpagenumber] = useState(1);
     
@@ -15,22 +15,24 @@ const PageNumberSelector = ({}:any) => {
             if(firstpagenumber > 1)
             {
                 setFirstpagenumber(firstpagenumber => firstpagenumber-1);
+                setIndex((index:number) => index-1);
             }
         }}
         />
-        <SelectorDiv pageNumber={firstpagenumber} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+1} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber}   />
-        <SelectorDiv pageNumber={firstpagenumber+2} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+3} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+4} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+5} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+6} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+7} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+8} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
-        <SelectorDiv pageNumber={firstpagenumber+9} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} />
+        <SelectorDiv pageNumber={firstpagenumber} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+1} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index}   />
+        <SelectorDiv pageNumber={firstpagenumber+2} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+3} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+4} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+5} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+6} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index}/>
+        <SelectorDiv pageNumber={firstpagenumber+7} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+8} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
+        <SelectorDiv pageNumber={firstpagenumber+9} firstpagenumber={firstpagenumber} setFirstpagenumber={setFirstpagenumber} setIndex={setIndex} index={index} />
         <SelectorDiv iconOption='Right' firstpagenumber={firstpagenumber}
                 onClickEvent={()=>{
                     setFirstpagenumber(firstpagenumber=>firstpagenumber+1);
+                    setIndex((index:number)=>index+1);
                 }}
                 />
 
