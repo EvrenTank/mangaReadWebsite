@@ -11,8 +11,8 @@ const MainDiv = ({lastEpisodes}:any) => {
     return (
         <div className="w-[100%] flex flex-row pt-[20px] max-[1000px]:flex-col  " >
             <div className='w-[65%] flex flex-col items-center border-2 max-[1000px]:w-full '>
-            <MangaCardList index={index} />
-            <PageNumberSelector index={index} setIndex={setIndex}/>
+            <MangaCardList index={index} lastEpisodes={lastEpisodes} />
+            <PageNumberSelector index={index} setIndex={setIndex} insideComponents={lastEpisodes} componentNumberInaList={12} />
             </div>
             <div className="w-[35%] flex flex-col items-center max-[1000px]:w-[100%] ">
             <GenresDiv/>

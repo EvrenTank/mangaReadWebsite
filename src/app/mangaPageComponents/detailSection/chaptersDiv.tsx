@@ -6,7 +6,19 @@ import { useState, useEffect } from "react";
 
 const ChaptersDiv = ({mangaName}:any) => {
 
-    const [lastEpisodes,setLastEpisodes] = useState([
+    const [index,setIndex] = useState(1);
+    const cn = 4; // componentNumberInaList
+
+    const [slicedEpisodes,setSlicedEpisodes] = useState([
+        {
+            name:'',
+            title:'',
+            episodeNumber:'',
+            episodeName:'',
+            addingDate:''
+        }
+    ]);
+    const [filteredEpisodes,setFilteredEpisodes] = useState([
         {
             name:'',
             title:'',
@@ -15,39 +27,30 @@ const ChaptersDiv = ({mangaName}:any) => {
             addingDate:''
         }
     ])
-    const [loaded,setLoaded] = useState(false);
     useEffect(()=>{
         axios.get(`https://manga-images-api-1.vercel.app/lastEpisodes`)
         .then((response)=>{
-
-            //console.log('Bulunan manga==', response.data.lastEpisodes);
             console.log('manga Name=',mangaName);
             const filteredEpisodes = response.data.lastEpisodes.filter( (episode:any) => {
-            //console.log('episode.name=',episode.name);  
-                return episode.name == mangaName});            
-            //console.log("filtered Episodes==", filteredEpisodes);
-            //console.log("Episodes==", lastEpisodes);
-            setLastEpisodes(filteredEpisodes);
-            setLoaded(true);
-          //console.log("Last five episodes ::", lastFiveEpisodes);
+                return episode.name == mangaName}
+            );
+            setFilteredEpisodes(filteredEpisodes);           
+            setSlicedEpisodes(filteredEpisodes.slice((index-1)*cn, index*cn < filteredEpisodes.length ? index*cn : filteredEpisodes.length ));
         })
-      },[mangaName]); 
+      },[mangaName,index]); 
 
     return (
         <div className="w-[100%] p-[10px] flex flex-col items-center bg-white mt-[20px]">
             <ul className='w-[100%] h-full grid grid-cols-2 gap-4 max-[500px]:grid-cols-1'>
-
                 { 
-                    lastEpisodes.map((episode,index) =>{
+                    slicedEpisodes.map((episode,i) =>{
                         return (
-           
-                            <ChapterListElement key={index} mangaName={mangaName} episodeNumber={episode.episodeNumber} episodeName={episode.episodeName} okunmaSayisi='11200' eklenmeTarihi={episode.addingDate}></ChapterListElement>
-
+                            <ChapterListElement key={i} mangaName={mangaName} episodeNumber={episode.episodeNumber} episodeName={episode.episodeName} okunmaSayisi='11200' eklenmeTarihi={episode.addingDate}></ChapterListElement>
                         )
                     })
                 }
             </ul>
-            <PageNumberSelector />
+            <PageNumberSelector index={index} setIndex={setIndex} insideComponents={filteredEpisodes} componentNumberInaList={cn}/>
             <SeeComments/>
 
 

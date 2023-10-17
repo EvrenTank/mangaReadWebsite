@@ -16,9 +16,10 @@ const MangaCardList = ({index}:any) => {
     useEffect(()=>{
         axios.get(`https://manga-images-api-1.vercel.app/lastEpisodes`)
         .then((response)=>{
-          setLastepisodes(response.data.lastEpisodes.slice(12*(index-1),12*index));  
+          const myEpisodes = response.data.lastEpisodes; 
+          setLastepisodes(myEpisodes.slice(12*(index-1), 12*index < myEpisodes.length ? 12*index : myEpisodes.length));  
         })
-      },[]); 
+      },[index]); 
 
       const findDayDifference =(addingDate:any)=> {
         var today = new Date();
@@ -33,7 +34,6 @@ const MangaCardList = ({index}:any) => {
         <div className="w-[85%] bg-white  grid grid-cols-4 p-[15px] gap-[15px] max-[800px]:grid-cols-2 max-[1200px]:grid-cols-3 rounded-[5px] relative " >
             {
                 lastepisodes.map((episode,index)=>{
-                    
                     return (
                     <Card key={index} imgSrc={`/lastMangaEpisodes/${episode.name}.jpg`} mangaName={episode.name} title={episode.title} episodeNumber={episode.episodeNumber} 
                     addingDate={findDayDifference(episode.addingDate)} />
