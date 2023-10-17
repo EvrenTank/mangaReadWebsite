@@ -9,12 +9,14 @@ const PreviousandNextButtonsDiv = ({episodeNumber, mangaName, tektek, sen, ben}:
             `/manga/${mangaName}/${sen == episodeNumber ? episodeNumber : parseInt(episodeNumber)-1}/1`
             :
             `/manga/${mangaName}/${sen == episodeNumber ? episodeNumber : parseInt(episodeNumber)-1}`} 
-            className="w-[20%] min-w-[200px] max-[1000px]:w-[100%] "><div className="w-[100%] py-[10px] bg-[#17a2b8] hover:bg-[#148FA2] duration-300 rounded-[5px]">Önceki Bölüm</div></Link>
+            className="w-[20%] min-w-[200px] max-[1000px]:w-[100%] ">
+                <div className={`w-[100%] py-[10px] duration-300 rounded-[5px] ${sen == episodeNumber ? 'bg-gray-400 cursor-default':'bg-[#17a2b8] hover:bg-[#148FA2]'}`}>Önceki Bölüm</div></Link>
             <Link href={tektek ? 
             `/manga/${mangaName}/${ben == episodeNumber ? episodeNumber : parseInt(episodeNumber)+1}/1`
             :
             `/manga/${mangaName}/${ben == episodeNumber ? episodeNumber : parseInt(episodeNumber)+1}`} 
-            className="w-[20%] min-w-[200px] max-[1000px]:w-[100%]"><div className="w-[100%]  py-[10px] bg-[#17a2b8] hover:bg-[#148FA2] duration-300 rounded-[5px]">Sonraki Bölüm</div></Link>
+            className="w-[20%] min-w-[200px] max-[1000px]:w-[100%]">
+                <div className={`w-[100%] py-[10px] duration-300 rounded-[5px] ${ben == episodeNumber ? 'bg-gray-400 cursor-default':'bg-[#17a2b8] hover:bg-[#148FA2]' }`}>Sonraki Bölüm</div></Link>
         </div>
     )
 }
