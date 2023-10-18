@@ -34,23 +34,6 @@ const DetailMainDiv = ({imgSrc,mangaName}:any) => {
         })
       },[mangaName]); 
 
-
-    /*
-    const details = {
-        nedir:'Manga',
-        goruntuleme:'10000',
-        yayinYili:'2007',
-        ceviriTamamlanmis:false,
-        yayinTamamlanmis:true,
-        kategori:['Aksiyon','Drama','Fantezi','Dövüş Sanatları','Shounen','Doğaüstü'],
-        ceviriGrubu:'Bağımsız',
-        konu:"Naruto serisine mini spin-off olarak çizilmiş manga. Naruto\'nun oğlunu ve gelecek nesil ninjaları konu almaktadır.",
-        kullanilanOySayisi:1000,
-        rating: 4.5,
-        takipciSayisi: 270
-    }
-    */
-
     return (
         <>
         <div id='detailMainDiv' className="w-[100%]  bg-white rounded-[5px] shadow-lg relative

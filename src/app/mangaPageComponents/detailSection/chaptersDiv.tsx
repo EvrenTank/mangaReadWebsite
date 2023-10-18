@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 const ChaptersDiv = ({mangaName}:any) => {
 
     const [index,setIndex] = useState(1);
-    const cn = 4; // componentNumberInaList
+    const cn = 1; // componentNumberInaList
 
     const [slicedEpisodes,setSlicedEpisodes] = useState([
         {
