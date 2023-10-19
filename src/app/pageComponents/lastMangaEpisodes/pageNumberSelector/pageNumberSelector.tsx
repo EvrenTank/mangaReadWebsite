@@ -86,10 +86,8 @@ const PageNumberSelector = ({index,setIndex,insideComponents,componentNumberInaL
         <SelectorDiv iconOption='Right' firstpagenumber={firstpagenumber}
                 onClickEvent={()=>{
                     if(neededPageNumber > firstpagenumber){
-                    setTimeout(()=>{
                       setFirstpagenumber(firstpagenumber=>firstpagenumber+1);
                       setIndex((index:number)=>index+1);
-                    },1000);
                 }
                 }}
                 />
