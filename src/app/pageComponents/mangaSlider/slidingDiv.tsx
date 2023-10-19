@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 const SlidingDiv = ({color,imgSrc,episodeNumber,date,name}:any) => {
     return (
         <div id='500vwicindeki100luk' className = {`w-[100vw] flex justify-center items-center max-[900px]:flex-col relative ${color}  `}>
@@ -8,7 +7,6 @@ const SlidingDiv = ({color,imgSrc,episodeNumber,date,name}:any) => {
                 <img src={`${imgSrc}`} alt="image" className="w-auto h-[85%]" />
             </div>
             </Link>
- 
             <div id='bolumNumberandDateDiv'
             className="h-full aspect-[3/4] absolute right-[60px]  flex flex-col justify-center items-center 
             bg-[rgba(0,0,0,0.3)]  max-[900px]:static max-[900px]:h-[200px] max-[900px]:w-[90%] max-[900px]:p-[20px] " >
@@ -20,7 +18,6 @@ const SlidingDiv = ({color,imgSrc,episodeNumber,date,name}:any) => {
                 <div className='w-[100%] h-[35%] text-center text-[14px] text-white flex justify-center items-center'>
                 <span className="">{date}</span>    
                 </div>
-                
                </div>
             </div>
         </div>
