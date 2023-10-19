@@ -1,11 +1,14 @@
-import Image from "next/image";
+import Link from "next/link";
 
-const SlidingDiv = ({color,imgSrc,episodeNumber,date}:any) => {
+const SlidingDiv = ({color,imgSrc,episodeNumber,date,name}:any) => {
     return (
         <div id='500vwicindeki100luk' className = {`w-[100vw] flex justify-center items-center max-[900px]:flex-col relative ${color}  `}>
-            <div id='imageDiv' className="w-[20vw] min-w-[200px] h-[250px]  flex justify-center items-end">
+            <Link href={`/manga/${name}`}>
+                <div id='imageDiv' className="w-[20vw] min-w-[200px] h-[250px]  flex justify-center items-end">
                 <img src={`${imgSrc}`} alt="image" className="w-auto h-[85%]" />
             </div>
+            </Link>
+ 
             <div id='bolumNumberandDateDiv'
             className="h-full aspect-[3/4] absolute right-[60px]  flex flex-col justify-center items-center 
             bg-[rgba(0,0,0,0.3)]  max-[900px]:static max-[900px]:h-[200px] max-[900px]:w-[90%] max-[900px]:p-[20px] " >

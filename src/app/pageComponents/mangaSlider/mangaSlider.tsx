@@ -47,11 +47,11 @@ const MangaSlider = ({lastEpisodes}:any) => {
                 transform : `translateX(${translateValue}vw)`,
                 transitionDuration: istrue  ? '0s' : '1s'
             }}>
-                <SlidingDiv color={'bg-gray-100'} imgSrc='/mangaSliderImages/naruto.png' episodeNumber={findElement("naruto").lastEpisodeNumber} date={`19:41 - ${findElement("naruto").lastAddingDate}`} />
-                <SlidingDiv color={'bg-green-400'} imgSrc='/mangaSliderImages/onePiece.png' episodeNumber={findElement("onepiece").lastEpisodeNumber} date={`19:05 - ${findElement("onepiece").lastAddingDate}`}/>
-                <SlidingDiv color={'bg-blue-400'} imgSrc='/mangaSliderImages/blackclover.png' episodeNumber={findElement("blackclover").lastEpisodeNumber} date={`19:41 - ${findElement("blackclover").lastAddingDate}`}/>
-                <SlidingDiv color={'bg-red-100'} imgSrc='/mangaSliderImages/onepunchman.png' episodeNumber={findElement("onepunchman").lastEpisodeNumber} date={`08:41 - ${findElement("onepunchman").lastAddingDate}`}/>
-                <SlidingDiv color={'bg-lime-500'} imgSrc='/mangaSliderImages/beelzebub.png' episodeNumber={findElement("beelzebub").lastEpisodeNumber} date={`19:41 - ${findElement("beelzebub").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-gray-100'} imgSrc='/mangaSliderImages/naruto.png' name='naruto' episodeNumber={findElement("naruto").lastEpisodeNumber} date={`19:41 - ${findElement("naruto").lastAddingDate}`} />
+                <SlidingDiv color={'bg-green-400'} imgSrc='/mangaSliderImages/onePiece.png' name='onepiece' episodeNumber={findElement("onepiece").lastEpisodeNumber} date={`19:05 - ${findElement("onepiece").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-blue-400'} imgSrc='/mangaSliderImages/blackclover.png' name='blackclover' episodeNumber={findElement("blackclover").lastEpisodeNumber} date={`19:41 - ${findElement("blackclover").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-red-100'} imgSrc='/mangaSliderImages/onepunchman.png' name='onepunchman' episodeNumber={findElement("onepunchman").lastEpisodeNumber} date={`08:41 - ${findElement("onepunchman").lastAddingDate}`}/>
+                <SlidingDiv color={'bg-lime-500'} imgSrc='/mangaSliderImages/beelzebub.png' name='beelzebub' episodeNumber={findElement("beelzebub").lastEpisodeNumber} date={`19:41 - ${findElement("beelzebub").lastAddingDate}`}/>
 
             </div>
 
